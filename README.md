@@ -19,7 +19,12 @@
     // @type bangumi (類型)
     // @webSite https://xxx.xxx.xxx/ (使用網站)
     // ==/MiruExtension==
-
+##### 類型說明
+|     @type     |                  說明           |
+| ------------- | ------------------------------ |
+| `manga`      | 漫畫       |
+| `bangumi`   | 影片     |
+| `fikushon`|       小說 |
 ### 基本框架
     export default class extends Extension {
       async latest(page) {
@@ -35,21 +40,60 @@
     // 觀看
       }
     }
-#### latest
-#### search
-#### watch
-#### detail
+
+
 
 ### 額外設定(選擇性)
-        async load(){
-        // 當插件載入時調用
-        }
-        async createFilter(filter){
-        // 建立篩選器
-        }
+    async load(){
+    // 當插件載入時調用
+    }
+    async createFilter(filter){
+    // 建立篩選器
+    }
+### 返回格式
+#### latest
+    [{
+        title: String, // 標題
+        cover: String, //封面連結
+        url:String, //給detail時的url
+        update:String, 更新集數
+    },...]
+#### search
+    [{
+        title: String, // 標題
+        cover: String, //封面連結
+        url:String, //給detail時的url
+        update:String, 更新集數
+    },...]
+#### watch
++ ##### bangumi
+    +     {
+              type:String, // 串流類型 只有 "hls" "mp4" "torrent" 三種
+              url:String,// 鏈結
+              subtitles:[{
+                  title:String //字幕標題
+                  url:String   //字幕連結
+              },...]
+          }
+#### detail
 #### request
 ### Regex
 ### CSS 選擇器
 ## 資源與工具
-+ #### Regex
-  + [Regex101](https://regex101.com/) 用來測試Regex的好網站
+
+這些只是個人常用的工具分享，不安裝甚麼事都不會發生
++ ### Regex
+    + [Regex101](https://regex101.com/)
+      
+        + 用來測試Regex的好網站
++ ### CSS 選擇器
+    + [Ublock Orgion](https://github.com/gorhill/uBlock)
+      
+        + 雖說是廣告攔截器但內建 CSS 內建選擇器，只要點擊網頁介面CSS路徑就會出現
+        + 內建紀錄器會記錄到訪網站的請求以及檔案(這對anti-debugging 非常有用，如果你連devtool都被阻擋的話)
+        + 一鍵關閉停用JavaScript
++ ### 網頁API 測試
+    + Fiddler
+    + PostMan
++ ### 對付anti debugger 的工具
+    + Resource Override 
