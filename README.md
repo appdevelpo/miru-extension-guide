@@ -23,7 +23,7 @@
 |     @type     |                  說明           |
 | ------------- | ------------------------------ |
 | `manga`      | 漫畫       |
-| `bangumi`   | 影片     |
+| `bangumi`   | 影片  ***只要是影片類的(動漫、電影等等)都是bangumi***  |
 | `fikushon`|       小說 |
 ### 基本框架
     export default class extends Extension {
@@ -37,7 +37,7 @@
     // 詳細資訊
       }
       async watch(url) {
-    // 觀看
+    // 觀看，點入小集後調用
       }
     }
 
@@ -66,19 +66,57 @@
         update:String, 更新集數
     },...]
 #### watch
-+ ##### bangumi
-    +     {
+對應不同種類(@type)返回不同數據
++ #### bangumi
+    
+
+      {
               type:String, // 串流類型 只有 "hls" "mp4" "torrent" 三種
               url:String,// 鏈結
               subtitles:[{
                   title:String //字幕標題
                   url:String   //字幕連結
-              },...]
+              },...],
+              headers:{} //看需求加
           }
+  + #### manga
+        {
+          urls: [], //圖片連結
+          headers:{} //看需求加
+          }
+  + #### fikushon
+        {
+            content :[], //文字內容
+            title:String,
+            headers:{} //看需求加
+        }
 #### detail
+        {
+            title:String,//標題
+            cover:String,//封面連結
+            desc:String,//描述
+            episodes: [{
+                title: String,//子標題
+                urls: {
+                    name: String,//名稱
+                    url: String//小集連結
+                }
+            },...]
+        }
 #### request
+發送請求
+
+        this.request(urltail,{
+            headers:{
+                "Miru-Url":urlhead
+            }
+            
+        }//選擇性使用
+        )
+所發送出來的Url為 `urlhead + urltail`，如果 `"Miru-Url"` 沒有宣告app會自動將其設定為  `@website`
 ### Regex
 ### CSS 選擇器
+
 ## 資源與工具
 
 這些只是個人常用的工具分享，不安裝甚麼事都不會發生
@@ -93,7 +131,6 @@
         + 內建紀錄器會記錄到訪網站的請求以及檔案(這對anti-debugging 非常有用，如果你連devtool都被阻擋的話)
         + 一鍵關閉停用JavaScript
 + ### 網頁API 測試
-    + Fiddler
     + PostMan
 + ### 對付anti debugger 的工具
     + Resource Override 
