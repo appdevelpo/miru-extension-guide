@@ -5,7 +5,7 @@
 
 # 基礎
 ## 插件編寫
-會基本JavaScript即可，如果不會JS建議去網路上查閱更詳細的資訊，這裡除了介紹如何使用編寫插件也會提供一些常用的Regex 和CSS選擇器的寫法
+會基本JavaScript即可，如果不會JS建議去網路上查閱更詳細的資訊
 ### 插件訊息
     // ==MiruExtension==
     // @name  Extension Name(插件名稱)
@@ -79,12 +79,12 @@
               },...],
               headers:{} //看需求加
           }
-  + #### manga
++ #### manga
         {
           urls: [], //圖片連結
           headers:{} //看需求加
           }
-  + #### fikushon
++ #### fikushon
         {
             content :[], //文字內容
             title:String,
@@ -115,11 +115,12 @@
         )
 所發送出來的Url為 `urlhead + urltail`，如果 `"Miru-Url"` 沒有宣告app會自動將其設定為  `@website`
 ### Regex
+基本上 Regex 的使用方法是用JavaScript的原生寫法，個人常用[`match`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)和[`replace`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)，
 ### CSS 選擇器
 
 ## 資源與工具
 
-這些只是個人常用的工具分享，不安裝甚麼事都不會發生
+下列只是個人常用的工具分享
 + ### Regex
     + [Regex101](https://regex101.com/)
       
@@ -128,7 +129,7 @@
     + [Ublock Orgion](https://github.com/gorhill/uBlock)
       
         + 雖說是廣告攔截器但內建 CSS 內建選擇器，只要點擊網頁介面CSS路徑就會出現
-        + 內建紀錄器會記錄到訪網站的請求以及檔案(這對anti-debugging 非常有用，如果你連devtool都被阻擋的話)
+        + 內建紀錄器會記錄到訪網站的請求以及檔案(這對anti-debugging 非常有用，如果連devtool都被阻擋的話)
         + 一鍵關閉停用JavaScript
 + ### 網頁API 測試
     + PostMan
