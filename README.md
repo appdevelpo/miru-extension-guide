@@ -8,16 +8,17 @@
 會基本JavaScript即可，如果不會JS建議去網路上查閱更詳細的資訊
 ### 插件訊息
     // ==MiruExtension==
-    // @name  Extension Name(插件名稱)
+    // @name  Extension Name (插件名稱)
     // @version v0.0.1(版本號)
     // @author Xxxx (作者)
     // @lang zh-cn (語言)
     // @license      MIT
-    // @nsfw         false
+    // @nsfw         false (Boolean)
     // @icon https://xxx.xxx.xxx/xxx.png (favicon)
     // @package xxx.xxx.xxx (插件名稱)
     // @type bangumi (類型)
     // @webSite https://xxx.xxx.xxx/ (使用網站)
+    // @description extension description (描述)
     // ==/MiruExtension==
 ##### 類型說明
 |     @type     |                  說明           |
@@ -77,6 +78,7 @@
                   title:String //字幕標題
                   url:String   //字幕連結
               },...],
+              audioTrack:String, //音频链接
               headers:{} //看需求加
           }
 + #### manga
