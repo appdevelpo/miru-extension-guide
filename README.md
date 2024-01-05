@@ -106,7 +106,7 @@
 #### request
 發送請求
 
-        this.request(urltail,{
+        request(urltail,{
             headers:{
                 "Miru-Url":urlhead
             }
@@ -118,6 +118,13 @@
 基本上 Regex 的使用方法是用JavaScript的原生寫法，個人常用[`match`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)和[`replace`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)，
 ### CSS 選擇器
 
+#### querySelector
+    querySelector(document,selector)
+跟原本的`document.querySelector` 不同
+#### querySelectorAll
+    querySelectorAll(document,selector)
+#### getAttributeText
+    getAttributeText(document,seletor,attribute)
 ## 資源與工具
 
 下列只是個人常用的工具分享
