@@ -128,7 +128,9 @@
 #### getAttributeText
     getAttributeText(document,seletor,attribute)
 ## 資源與工具
-
+### 參考資源
+[miru repo](https://github.com/miru-project/repo) miru 的官方的插件倉庫可以參考
+  
 下列只是個人常用的工具分享
 + ### Regex
     + [Regex101](https://regex101.com/)
