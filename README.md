@@ -3,6 +3,8 @@
 
 **API 詳細內容請參閱 https://miru.js.org/developer/**
 
+**For english guide please check [here](https://github.com/appdevelpo/web_scraping_guide/blob/main/english.md)**
+
 # 基礎
 ## 插件編寫
 會基本JavaScript即可，如果不會JS建議去網路上查閱更詳細的資訊
