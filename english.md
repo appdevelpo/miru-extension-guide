@@ -138,7 +138,23 @@ request(urlTail, {
   // Optional
 })
 ```
-The sent URL is `urlHead + urlTail`. If `"Miru-Url"` is not declared, the app will automatically set it to `@website`.
+The sent URL is `urlHead + urlTail`. If `"Miru-Url"` is not declared, the app will automatically set `urlHead` it to `@website`.
+##### example
+```javascript
+// the site you want to request is https://example.com/example and the @website is set to htts://example.com/
+request("example")
+// the site you want to request is https://anotherhost.com/example and the @website is set to htts://example.com/
+request("",{
+  headers:{
+      "Miru-url":"https://anotherhost.com/example"
+    }
+})
+request("example",{
+  headers:{
+      "Miru-url":"https://anotherhost.com/"
+    }
+})
+```
 
 ### Regex
 For regex, use JavaScript's native methods such as [`match`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) and [`replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
